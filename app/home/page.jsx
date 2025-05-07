@@ -1,3 +1,5 @@
+
+import Auth from '../Components/Auth'
 import Components from './components';
 
 const Home = async({ searchParams }) => {
@@ -7,7 +9,8 @@ const Home = async({ searchParams }) => {
 
 
 	return (
-		<div>
+		<div className='overflow-hidden'>
+			<Auth/>
 			<Components query={query} categories={categories} />
 		</div>
 	);
