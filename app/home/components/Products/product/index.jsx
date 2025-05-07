@@ -2,7 +2,7 @@ import { Pagination } from 'antd'
 import Card from './card'
 import Search from './seacrch'
 
-const Product = async ({ query , categories }) => {
+const Product = async ({ query, categories }) => {
 	let products = []
 
 	if (query) {
@@ -11,7 +11,7 @@ const Product = async ({ query , categories }) => {
 		products = dataSearch.products || []
 	} else {
 		const res = await fetch(
-			`https://dummyjson.com/products/category/${categories}?limit=0`
+			`https://dummyjson.com/products/category/${categories}?limit=9`
 		)
 		const data = await res.json()
 		products = data.products || []
