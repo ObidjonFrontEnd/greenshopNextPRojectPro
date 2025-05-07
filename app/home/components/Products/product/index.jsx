@@ -25,12 +25,14 @@ const Product = async ({ query, categories }) => {
 					return <Card key={product.id} product={product} />
 				})}
 			</div>
+			<div className="mt-[50px]">
 			<Pagination
-				className='mt-[20px]'
+			
 				align='center'
 				defaultCurrent={1}
 				total={50}
 			/>
+			</div>
 		</div>
 	)
 }
