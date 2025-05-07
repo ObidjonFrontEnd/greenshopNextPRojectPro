@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+@layer components {
+	.hero-carousel .slick-dots li button {
+		@apply bg-gray-300 w-3 h-3 rounded-full;
+	}
+
+	.hero-carousel .slick-dots li.slick-active button {
+		@apply bg-[#46A358];
+	}
+
+	.hero-carousel .slick-dots li button::before {
+		content: none;
+	}
+}
+
+
+
