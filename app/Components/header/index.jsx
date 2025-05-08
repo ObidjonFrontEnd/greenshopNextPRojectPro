@@ -5,7 +5,7 @@ const Header = () => {
 	return (
 		<div>
 			<ResponsiveHeader/>
-			</div>
+		</div>
 	)
 }
 

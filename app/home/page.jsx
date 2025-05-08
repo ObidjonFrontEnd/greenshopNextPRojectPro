@@ -1,5 +1,6 @@
 
 import Auth from '../Components/Auth'
+import HeaderSm from '../Components/header/Responsive/headerSm'
 import Components from './components';
 
 const Home = async({ searchParams }) => {
@@ -12,6 +13,9 @@ const Home = async({ searchParams }) => {
 		<div className='overflow-hidden'>
 			<Auth/>
 			<Components query={query} categories={categories} />
+			<div className="md:hidden">
+				<HeaderSm/>
+			</div>
 		</div>
 	);
 };

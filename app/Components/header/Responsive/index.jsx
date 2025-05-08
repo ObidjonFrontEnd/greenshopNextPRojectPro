@@ -1,6 +1,6 @@
 import React from 'react'
 import HeaderMD from './headerMd'
-import HeaderSm from './headerSm'
+
 
 const ResponsiveHeader = () => {
 	return (
@@ -9,9 +9,7 @@ const ResponsiveHeader = () => {
 				<HeaderMD/>
 				
 			</div>
-			<div className="md:hidden">
-				<HeaderSm/>
-			</div>
+			
 		</div>
 	)
 }

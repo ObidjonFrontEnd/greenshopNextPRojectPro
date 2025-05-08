@@ -3,7 +3,7 @@ import useMessageStore from '@/app/redux/massege/messege';
 import { notification } from 'antd';
 
 const useNotificationMessage = () => {
-  const { message, messageType } = useMessageStore();
+  const { message, messageType, clearMessage } = useMessageStore();
   const [api, contextHolder] = notification.useNotification();
 
   useEffect(() => {
@@ -11,15 +11,19 @@ const useNotificationMessage = () => {
 
     const type = messageType.toLowerCase();
     const validTypes = ['success', 'info', 'warning', 'error'];
-
     const notify = validTypes.includes(type) ? api[type] : api.info;
+
 
     notify({
       message: type.toUpperCase(),
       description: message,
       placement: 'topRight',
     });
-  }, [message, messageType, api]);
+
+   
+    clearMessage();
+
+  }, [message, messageType]);
 
   return { contextHolder };
 };

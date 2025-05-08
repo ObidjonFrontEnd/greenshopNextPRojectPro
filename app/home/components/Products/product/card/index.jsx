@@ -22,7 +22,7 @@ const Card = ({ product }) => {
 			</div>
 			<div className='px-[5px] mt-[12px]'>
 				<p className='text-[16px] leading-[16px]  h-[40px] text-[#3D3D3D] font-bold'>
-					<Link href='/'>{product?.title}</Link>
+					<Link href={`/product/${product?.id}`}>{product?.title}</Link>
 				</p>
 				<Rate allowHalf disabled={true} defaultValue={product?.rating}/>
 				<p className='text-[#46A358] text-[18px] font-bold leading-[16px] mt-[7px]'>
