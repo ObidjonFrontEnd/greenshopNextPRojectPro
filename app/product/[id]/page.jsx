@@ -4,6 +4,7 @@ import { Facebook, Heart, Linkedin, Mail, Twitter } from 'lucide-react'
 import Link from 'next/link'
 import ProductImage from './image'
 import TabsDescription from './tabs'
+import Buy from './buy'
 
 const ProductShop = async ({ params }) => {
 	const { id } = await params
@@ -72,31 +73,7 @@ const ProductShop = async ({ params }) => {
 							</div>
 						</div>
 
-						<div className='hidden mt-[23px] md:flex gap-[26px]'>
-							<div className='flex items-center w-[119px] justify-between'>
-								<button className='bg-[#46A358] rounded-[50%] h-[33px] w-[33px] text-white text-[18px]'>
-									-
-								</button>
-								<p>1</p>
-								<button className='bg-[#46A358] rounded-[50%] h-[33px] w-[33px] text-white text-[18px]'>
-									+
-								</button>
-							</div>
-
-							<div className='flex gap-[10px] items-center'>
-								<button className='font-bold hover:text-[#46A358] hover:bg-white w-[130px] h-[40px] bg-[#46A358] text-white rounded-[6px] border-[#46A358] border-[1px] duration-300'>
-									Buy NOW
-								</button>
-
-								<button className='font-bold w-[130px] h-[40px] hover:bg-[#46A358] hover:text-white border-[#46A358] border-[1px] text-[#46A358] rounded-[6px] duration-300'>
-									Buy NOW
-								</button>
-
-								<button className='border-[1px] border-[#46A358] rounded-[6px] h-[40px] w-[40px] flex items-center justify-center  text-[#46A358] hover:text-white hover:bg-[#46A358]'>
-									<Heart />
-								</button>
-							</div>
-						</div>
+						<Buy id={data.id}/>
 
 						<div className='flex flex-col gap-[11px] mt-[26px]'>
 							<p className='text-[#727272ca] text-[15px] leading-[16px] font-normal'>

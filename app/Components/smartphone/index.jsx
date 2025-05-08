@@ -6,7 +6,7 @@ import useMessageStore from '@/app/redux/massege/messege'
 import useNotificationMessage from '@/app/hook/useNotificationMessage/useNotificationMessage'
 
 const BuyNowSection = ({id}) => {
- const [quantity , setQuantity] = useState(0)
+ const [quantity , setQuantity] = useState(1)
  const { message, setMessage } = useMessageStore();
  const { openNotification, contextHolder } = useNotificationMessage();
 
