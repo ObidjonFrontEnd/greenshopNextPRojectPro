@@ -3,12 +3,11 @@ import React, { useState } from 'react';
 import { ShoppingCart } from 'lucide-react';
 import axios from 'axios'
 import useMessageStore from '@/app/redux/massege/messege'
-import useNotificationMessage from '@/app/hook/useNotificationMessage/useNotificationMessage'
 
 const BuyNowSection = ({id}) => {
  const [quantity , setQuantity] = useState(1)
  const { message, setMessage } = useMessageStore();
- const { openNotification, contextHolder } = useNotificationMessage();
+ 
 
   const addShopCat = async () =>{
     try{
@@ -33,7 +32,7 @@ const BuyNowSection = ({id}) => {
     <div className="fixed w-full bottom-0 left-0 right-0 z-50  ">
       <div className="w-full  mx-auto bg-white p-5 rounded-[30px] shadow-[0_4px_20px_rgba(0,0,0,0.1)] flex flex-col gap-5">
         
-
+     
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-sm text-gray-600 font-medium">Qty</span>

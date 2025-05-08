@@ -6,16 +6,20 @@ import Link from 'next/link'
 import React from 'react'
 
 import useNotificationMessage from '@/app/hook/useNotificationMessage/useNotificationMessage'
-	const Context = React.createContext({ name: 'Default' })
-
+import useUserStore from '@/app/redux/usetData/userData'
+const Context = React.createContext({ name: 'Default' })
 
 const HeaderMD = () => {
+	const { user, setUser, clearUser } = useUserStore()
 	const { authIsOpen, authIsOpenSet } = useAuthStore()
 	const { openNotification, contextHolder } = useNotificationMessage()
 
+	
 	return (
 		<header className='max-w-[1200px] mx-auto'>
-			<Context.Provider value={openNotification}>{contextHolder}</Context.Provider>
+			<Context.Provider value={openNotification}>
+				{contextHolder}
+			</Context.Provider>
 			<nav className='flex justify-between h-[78px] w-full px-[10px] items-center border-b-[#46A35880] border-b-[1px]'>
 				<div className='logo'>
 					<Link href={'/home'}>Logo</Link>
@@ -41,12 +45,21 @@ const HeaderMD = () => {
 						</Link>
 					</li>
 					<li>
-						<button
-							className='bg-[#46A358] px-[19px] font-medium text-[16px] py-[10px] text-white flex gap-[5px] text-bold rounded-[6px]'
-							onClick={authIsOpenSet}
-						>
-							<LogIn /> Login
-						</button>
+						{user ? (
+							<Link href={'/profile'}
+								className='bg-[#46A358] px-[19px] font-medium text-[16px] py-[10px] text-white flex gap-[5px] text-bold rounded-[6px]'
+							
+							>
+								{user.firstName}
+							</Link>
+						) : (
+							<button
+								className='bg-[#46A358] px-[19px] font-medium text-[16px] py-[10px] text-white flex gap-[5px] text-bold rounded-[6px]'
+								onClick={authIsOpenSet}
+							>
+								<LogIn /> Login
+							</button>
+						)}
 					</li>
 				</ul>
 			</nav>

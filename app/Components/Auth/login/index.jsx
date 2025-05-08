@@ -3,8 +3,9 @@ import { Form, Input, Button } from 'antd'
 import useAuthStore from '@/app/redux/OpenModalAuth/AuthSlice'
 import axios from 'axios'
 import useUserStore from '@/app/redux/usetData/userData'
-import useMessageStore from '@/app/redux/massege/messege'
+
 import useNotificationMessage from '@/app/hook/useNotificationMessage/useNotificationMessage'
+import useMessageStore from '@/app/redux/massege/messege'
 
 const Login = () => {
 	const { authIsOpen, authIsOpenSet } = useAuthStore()
@@ -22,9 +23,6 @@ const Login = () => {
 
 			setMessage('Success', 'Success');
       setUser(response.data);
-			authIsOpenSet()
-			openNotification()
-			
     } catch (error) {
 			setMessage(error.message, 'Error');
     }
