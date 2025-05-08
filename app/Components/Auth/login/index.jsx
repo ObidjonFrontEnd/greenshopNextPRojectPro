@@ -23,6 +23,7 @@ const Login = () => {
 
 			setMessage('Success', 'Success');
       setUser(response.data);
+			authIsOpenSet()
     } catch (error) {
 			setMessage(error.message, 'Error');
     }
