@@ -1,25 +1,22 @@
-
-
 import { Table, Empty } from "antd";
 import Link from 'next/link'
 import React from "react";
 
 const ProductTable = async () => {
-  const res = await fetch("https://dummyjson.com/carts/user/1");
+
+  const res = await fetch("https://dummyjson.com/products/category/smartphones");
   const data = await res.json();
 
-  const rows = data.carts?.flatMap((cart) =>
-    cart.products.map((product) => ({
-      key: product.id,
-      product: product.title,
-      price: `$${product.price}`,
-      total: `$${product.total}`,
-    }))
-  );
+  const rows = data.products?.map((product) => ({
+    key: product.id,
+    product: product.title,
+    price: `$${product.price}`,
+    total: `$${(product.price * product.stock).toFixed(2)}`, // example total: price * stock
+  }));
 
   const columns = [
     {
-      title: "Products",
+      title: "Product",
       dataIndex: "product",
       key: "product",
     },
@@ -29,7 +26,7 @@ const ProductTable = async () => {
       key: "price",
     },
     {
-      title: "Total",
+      title: "Total Value in Stock",
       dataIndex: "total",
       key: "total",
     },
@@ -38,7 +35,10 @@ const ProductTable = async () => {
   return (
     <div className="p-4">
       <div className="flex justify-end mb-4">
-        <Link href={'/profile/myproducts/addproduct'} className="bg-[#46A358] text-white font-bold rounded-[8px] text-[18px] px-[15px] py-[10px]">
+        <Link
+          href="/profile/myproducts/addproduct"
+          className="bg-[#46A358] text-white font-bold rounded-[8px] text-[18px] px-[15px] py-[10px]"
+        >
           Add new
         </Link>
       </div>
