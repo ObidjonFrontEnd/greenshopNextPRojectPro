@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { Form, Input, Button } from 'antd'
 import useAuthStore from '@/app/redux/OpenModalAuth/AuthSlice'

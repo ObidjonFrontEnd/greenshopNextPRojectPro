@@ -1,13 +1,13 @@
 'use client'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import {
-	HomeOutlined,
 	HeartOutlined,
+	HomeOutlined,
+	ScanOutlined,
 	ShoppingCartOutlined,
 	UserOutlined,
-	ScanOutlined,
 } from '@ant-design/icons'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import useAuthStore from '@/app/redux/OpenModalAuth/AuthSlice'
 import useUserStore from '@/app/redux/usetData/userData'
@@ -56,9 +56,7 @@ const HeaderSm = () => {
 						<UserOutlined />
 					</button>
 				)}
-				<button onClick={authIsOpenSet} className='text-2xl text-gray-400'>
-					<UserOutlined />
-				</button>
+			
 			</div>
 		</div>
 	)

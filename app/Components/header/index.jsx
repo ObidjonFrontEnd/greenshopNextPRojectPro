@@ -1,13 +1,10 @@
-import React from 'react'
 import ResponsiveHeader from './Responsive'
 
 const Header = () => {
 	return (
 		<div>
-			<ResponsiveHeader/>
+			<ResponsiveHeader />
 		</div>
 	)
 }
-
-
 export default Header
