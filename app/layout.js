@@ -3,6 +3,8 @@ import './globals.css'
 
 import Footer from './Components/footer'
 import Header from './Components/header'
+import Auth from './Components/Auth'
+
 
 const inter = Inter({
 	variable: '--font-inter',
@@ -20,6 +22,7 @@ export default function RootLayout({ children }) {
 		<html lang='en'>
 			<body className={`${inter.variable} antialiased`}>
 				<Header />
+				<Auth/>
 				{children}
 				<Footer />
 			</body>

@@ -40,7 +40,7 @@ const HeaderMD = () => {
 						</Link>
 					</li>
 					<li>
-						<Link href={'/'}>
+						<Link href={'/cart'}>
 							<ShoppingCart />
 						</Link>
 					</li>
