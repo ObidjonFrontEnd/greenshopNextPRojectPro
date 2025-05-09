@@ -11,7 +11,7 @@ const ProductTable = async () => {
     key: product.id,
     product: product.title,
     price: `$${product.price}`,
-    total: `$${(product.price * product.stock).toFixed(2)}`, // example total: price * stock
+    total: `$${(product.price * product.stock).toFixed(2)}`, 
   }));
 
   const columns = [
