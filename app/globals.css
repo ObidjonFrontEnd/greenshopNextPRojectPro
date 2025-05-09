@@ -44,6 +44,9 @@ body {
 .custom-tabs .ant-tabs-tab:hover .tab-label {
   color: #3CB371;
 }
-
+.custom-radio .ant-radio-checked .ant-radio-inner {
+  border-color: #46A358 !important; 
+  background-color: #46A358 !important;
+}
 
 

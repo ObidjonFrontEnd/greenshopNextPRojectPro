@@ -14,7 +14,7 @@ const Card = ({ product }) => {
 				</div>
 				<div className='scale-0 group-hover:scale-100 duration-300 flex gap-[26px] absolute bottom-[8px] left-1/2 transform -translate-x-1/2'>
 					<div className='w-[35px] h-[35px] bg-white rounded-[4px] flex items-center justify-center'><Heart  /></div>
-					<div className='w-[35px] h-[35px] bg-white rounded-[4px] flex items-center justify-center'><ShoppingCart /></div>
+					<Link href={'/cart'} className='w-[35px] h-[35px] bg-white rounded-[4px] flex items-center justify-center'><ShoppingCart /></Link>
 					<div className='w-[35px] h-[35px] bg-white rounded-[4px] flex items-center justify-center'><Search /></div>		
 				</div>
 
